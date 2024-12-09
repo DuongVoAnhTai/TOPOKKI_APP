@@ -32,122 +32,220 @@ namespace TOPOKKI_APP
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lsvOrder = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnSwitchTable = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblTable = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbFood = new System.Windows.Forms.ComboBox();
+            this.btnAddFood = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lsvOrder);
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 651);
+            this.panel1.Size = new System.Drawing.Size(746, 529);
             this.panel1.TabIndex = 0;
+            // 
+            // lsvOrder
+            // 
+            this.lsvOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lsvOrder.FullRowSelect = true;
+            this.lsvOrder.GridLines = true;
+            this.lsvOrder.HideSelection = false;
+            this.lsvOrder.Location = new System.Drawing.Point(424, 83);
+            this.lsvOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvOrder.MultiSelect = false;
+            this.lsvOrder.Name = "lsvOrder";
+            this.lsvOrder.Size = new System.Drawing.Size(320, 355);
+            this.lsvOrder.TabIndex = 3;
+            this.lsvOrder.UseCompatibleStateImageBehavior = false;
+            this.lsvOrder.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên món";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số lượng";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Width = 90;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 90;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.txtTotalPrice);
             this.panel5.Controls.Add(this.comboBox1);
             this.panel5.Controls.Add(this.btnSwitchTable);
             this.panel5.Controls.Add(this.btnCheckOut);
-            this.panel5.Location = new System.Drawing.Point(566, 510);
+            this.panel5.Location = new System.Drawing.Point(424, 442);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(340, 130);
+            this.panel5.Size = new System.Drawing.Size(320, 78);
             this.panel5.TabIndex = 0;
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPrice.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txtTotalPrice.Location = new System.Drawing.Point(114, 28);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(105, 26);
+            this.txtTotalPrice.TabIndex = 3;
+            this.txtTotalPrice.Text = "0";
+            this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 86);
+            this.comboBox1.Location = new System.Drawing.Point(11, 51);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.Size = new System.Drawing.Size(88, 20);
             this.comboBox1.TabIndex = 2;
             // 
             // btnSwitchTable
             // 
-            this.btnSwitchTable.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSwitchTable.Location = new System.Drawing.Point(16, 81);
+            this.btnSwitchTable.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSwitchTable.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSwitchTable.Location = new System.Drawing.Point(11, 14);
+            this.btnSwitchTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(89, 33);
+            this.btnSwitchTable.Size = new System.Drawing.Size(87, 27);
             this.btnSwitchTable.TabIndex = 1;
             this.btnSwitchTable.Text = "Chuyển bàn";
-            this.btnSwitchTable.UseVisualStyleBackColor = true;
+            this.btnSwitchTable.UseVisualStyleBackColor = false;
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(16, 29);
+            this.btnCheckOut.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Location = new System.Drawing.Point(234, 14);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(89, 33);
+            this.btnCheckOut.Size = new System.Drawing.Size(80, 51);
             this.btnCheckOut.TabIndex = 0;
             this.btnCheckOut.Text = "Thanh toán";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(566, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(340, 503);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Controls.Add(this.lblTable);
-            this.panel3.Location = new System.Drawing.Point(67, 52);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(228, 82);
-            this.panel3.TabIndex = 1;
-            // 
-            // lblTable
-            // 
-            this.lblTable.Location = new System.Drawing.Point(41, 26);
-            this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(155, 38);
-            this.lblTable.TabIndex = 0;
-            this.lblTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(557, 640);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(418, 520);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(10, 10);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(169, 21);
+            this.cbCategory.TabIndex = 4;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            // 
+            // cbFood
+            // 
+            this.cbFood.FormattingEnabled = true;
+            this.cbFood.Location = new System.Drawing.Point(10, 40);
+            this.cbFood.Name = "cbFood";
+            this.cbFood.Size = new System.Drawing.Size(169, 21);
+            this.cbFood.TabIndex = 5;
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddFood.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFood.Location = new System.Drawing.Point(184, 10);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(80, 51);
+            this.btnAddFood.TabIndex = 4;
+            this.btnAddFood.Text = "Thêm món";
+            this.btnAddFood.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.nmFoodCount);
+            this.panel2.Controls.Add(this.btnAddFood);
+            this.panel2.Controls.Add(this.cbFood);
+            this.panel2.Controls.Add(this.cbCategory);
+            this.panel2.Location = new System.Drawing.Point(425, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(310, 76);
+            this.panel2.TabIndex = 6;
+            // 
+            // nmFoodCount
+            // 
+            this.nmFoodCount.Location = new System.Drawing.Point(270, 27);
+            this.nmFoodCount.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.nmFoodCount.Name = "nmFoodCount";
+            this.nmFoodCount.Size = new System.Drawing.Size(37, 20);
+            this.nmFoodCount.TabIndex = 6;
+            this.nmFoodCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // TableFoodForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 652);
+            this.ClientSize = new System.Drawing.Size(747, 530);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TableFoodForm";
             this.Text = "TableFood";
             this.Load += new System.EventHandler(this.TableFoodForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,13 +253,21 @@ namespace TOPOKKI_APP
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Label lblTable;
-        private Panel panel3;
         private Panel panel5;
         private ComboBox comboBox1;
         private Button btnSwitchTable;
         private Button btnCheckOut;
+        private ListView lsvOrder;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private TextBox txtTotalPrice;
+        private Panel panel2;
+        private NumericUpDown nmFoodCount;
+        private Button btnAddFood;
+        private ComboBox cbFood;
+        private ComboBox cbCategory;
     }
 }

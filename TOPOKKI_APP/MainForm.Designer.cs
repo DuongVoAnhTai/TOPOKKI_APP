@@ -53,7 +53,7 @@ namespace TOPOKKI_APP
             this.pnBody.Location = new System.Drawing.Point(229, 0);
             this.pnBody.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(918, 652);
+            this.pnBody.Size = new System.Drawing.Size(996, 652);
             this.pnBody.TabIndex = 1;
             // 
             // pnLeft
@@ -178,7 +178,7 @@ namespace TOPOKKI_APP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 652);
+            this.ClientSize = new System.Drawing.Size(1228, 652);
             this.Controls.Add(this.pnBody);
             this.Controls.Add(this.pnLeft);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -22,7 +22,6 @@ namespace TOPOKKI_APP.Models.Entities
         public int ID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public int UnitInStock { get; set; }
         public Nullable<int> CategoryID { get; set; }
     
         public virtual Category Category { get; set; }
