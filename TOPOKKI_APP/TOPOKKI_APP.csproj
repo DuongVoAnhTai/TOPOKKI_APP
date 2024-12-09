@@ -59,6 +59,7 @@
     <Compile Include="AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\TableFoodController.cs" />
     <Compile Include="Helpers\User.cs" />

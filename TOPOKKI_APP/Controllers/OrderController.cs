@@ -10,6 +10,16 @@ namespace TOPOKKI_APP.Controllers
 {
     internal class OrderController
     {
+        private static OrderController instance;
+
+        public static OrderController Instance
+        {
+            get { if(instance == null) instance = new OrderController(); return instance; }
+            set { instance = value; }
+        }
+
+        private OrderController() { }
+
         public List<Menu> GetMenuItem(int id)
         {
             using(var context = new TopokkiEntities())

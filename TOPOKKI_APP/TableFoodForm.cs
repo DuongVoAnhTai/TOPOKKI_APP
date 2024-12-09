@@ -16,13 +16,9 @@ namespace TOPOKKI_APP
 {
     public partial class TableFoodForm : Form
     {
-        private readonly TableFoodController _tableFoodcontroller;
-        private readonly OrderController _orderController;
         public TableFoodForm()
         {
             InitializeComponent();
-            _tableFoodcontroller = new TableFoodController();
-            _orderController = new OrderController();
         }
 
         private void TableFoodForm_Load(object sender, EventArgs e)
@@ -34,7 +30,7 @@ namespace TOPOKKI_APP
         private void LoadTables()
         {
             // Lấy danh sách bàn từ Controller
-            var tables = _tableFoodcontroller.GetTableList();
+            var tables = TableFoodController.Instance.GetTableList();
 
             foreach (var table in tables)
             {
@@ -78,7 +74,7 @@ namespace TOPOKKI_APP
 
         void ShowOrder(int id)
         {
-            var menuItems = _orderController.GetMenuItem(id);
+            var menuItems = OrderController.Instance.GetMenuItem(id);
             decimal totalPrice = 0;
             lsvOrder.Items.Clear();
 

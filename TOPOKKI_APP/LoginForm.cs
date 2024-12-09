@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TOPOKKI_APP.Controllers;
 using TOPOKKI_APP.Helpers;
 using TOPOKKI_APP.Models.Entities;
 
@@ -23,7 +24,7 @@ namespace TOPOKKI_APP
             string username = txtUserName.Text;
             string password = txtPassword.Text;
 
-            string role = CheckLogin(username, password);
+            string role = AccountController.Instance.CheckLogin(username, password);
             if (role != null)
             {
                 User.SetUser(username, role);
@@ -35,20 +36,6 @@ namespace TOPOKKI_APP
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private string CheckLogin(string username, string password)
-        {
-            using (var context = new TopokkiEntities())
-            {
-                var account = context.Accounts.
-                    FirstOrDefault(a => a.UserName == username && a.Password == password);
-                if (account != null)
-                {
-                    return account.Role;
-                }
-                return null;
             }
         }
 
