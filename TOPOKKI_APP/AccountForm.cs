@@ -16,10 +16,10 @@ namespace TOPOKKI_APP
         public AccountForm()
         {
             InitializeComponent();
-            loadAccountData();
+            LoadAccountData();
         }
 
-        private void loadAccountData()
+        private void LoadAccountData()
         {
             try
             {

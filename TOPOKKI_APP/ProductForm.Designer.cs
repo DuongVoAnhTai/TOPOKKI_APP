@@ -1,9 +1,6 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-
-namespace TOPOKKI_APP
+﻿namespace TOPOKKI_APP
 {
-    partial class AccountForm
+    partial class ProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,51 +29,93 @@ namespace TOPOKKI_APP
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnPassAccount = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtPhoneAccount = new System.Windows.Forms.TextBox();
+            this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.cbRoleAccount = new System.Windows.Forms.ComboBox();
+            this.cbProductCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNameAccount = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtProductID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
-            this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dgvProduct);
+            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.dgvAccount);
-            this.panel1.Location = new System.Drawing.Point(1, -1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(747, 530);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(13, 97);
+            this.dgvProduct.MultiSelect = false;
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduct.Size = new System.Drawing.Size(382, 421);
+            this.dgvProduct.TabIndex = 4;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btnSearch);
+            this.panel8.Controls.Add(this.txtSearch);
+            this.panel8.Location = new System.Drawing.Point(408, 23);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(327, 51);
+            this.panel8.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(250, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 46);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(3, 16);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(232, 20);
+            this.txtSearch.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnPassAccount);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
@@ -87,20 +126,9 @@ namespace TOPOKKI_APP
             this.panel3.Size = new System.Drawing.Size(335, 423);
             this.panel3.TabIndex = 2;
             // 
-            // btnPassAccount
-            // 
-            this.btnPassAccount.BackColor = System.Drawing.SystemColors.Control;
-            this.btnPassAccount.Location = new System.Drawing.Point(213, 214);
-            this.btnPassAccount.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPassAccount.Name = "btnPassAccount";
-            this.btnPassAccount.Size = new System.Drawing.Size(107, 30);
-            this.btnPassAccount.TabIndex = 3;
-            this.btnPassAccount.Text = "Đặt lại mật khẩu";
-            this.btnPassAccount.UseVisualStyleBackColor = false;
-            // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.txtPhoneAccount);
+            this.panel7.Controls.Add(this.txtProductPrice);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Location = new System.Drawing.Point(2, 153);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
@@ -108,29 +136,30 @@ namespace TOPOKKI_APP
             this.panel7.Size = new System.Drawing.Size(331, 44);
             this.panel7.TabIndex = 8;
             // 
-            // txtPhoneAccount
+            // txtProductPrice
             // 
-            this.txtPhoneAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneAccount.Location = new System.Drawing.Point(130, 10);
-            this.txtPhoneAccount.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPhoneAccount.Name = "txtPhoneAccount";
-            this.txtPhoneAccount.Size = new System.Drawing.Size(188, 29);
-            this.txtPhoneAccount.TabIndex = 4;
+            this.txtProductPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductPrice.Location = new System.Drawing.Point(130, 10);
+            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.Size = new System.Drawing.Size(188, 29);
+            this.txtProductPrice.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(2, 11);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 21);
+            this.label4.Size = new System.Drawing.Size(39, 21);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Số điện thoại:";
+            this.label4.Text = "Giá:";
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.cbRoleAccount);
+            this.panel6.Controls.Add(this.cbProductCategory);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Location = new System.Drawing.Point(2, 105);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
@@ -138,15 +167,15 @@ namespace TOPOKKI_APP
             this.panel6.Size = new System.Drawing.Size(331, 44);
             this.panel6.TabIndex = 7;
             // 
-            // cbRoleAccount
+            // cbProductCategory
             // 
-            this.cbRoleAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRoleAccount.FormattingEnabled = true;
-            this.cbRoleAccount.Location = new System.Drawing.Point(130, 11);
-            this.cbRoleAccount.Margin = new System.Windows.Forms.Padding(2);
-            this.cbRoleAccount.Name = "cbRoleAccount";
-            this.cbRoleAccount.Size = new System.Drawing.Size(188, 29);
-            this.cbRoleAccount.TabIndex = 2;
+            this.cbProductCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductCategory.FormattingEnabled = true;
+            this.cbProductCategory.Location = new System.Drawing.Point(130, 11);
+            this.cbProductCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cbProductCategory.Name = "cbProductCategory";
+            this.cbProductCategory.Size = new System.Drawing.Size(188, 29);
+            this.cbProductCategory.TabIndex = 2;
             // 
             // label3
             // 
@@ -155,14 +184,14 @@ namespace TOPOKKI_APP
             this.label3.Location = new System.Drawing.Point(2, 11);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 21);
+            this.label3.Size = new System.Drawing.Size(92, 21);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Loại tài khoản:";
+            this.label3.Text = "Danh mục:";
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.txtNameAccount);
+            this.panel5.Controls.Add(this.txtProductName);
             this.panel5.Location = new System.Drawing.Point(2, 57);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
@@ -176,23 +205,23 @@ namespace TOPOKKI_APP
             this.label2.Location = new System.Drawing.Point(2, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 21);
+            this.label2.Size = new System.Drawing.Size(80, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tên hiển thị:";
+            this.label2.Text = "Tên món:";
             // 
-            // txtNameAccount
+            // txtProductName
             // 
-            this.txtNameAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameAccount.Location = new System.Drawing.Point(130, 10);
-            this.txtNameAccount.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNameAccount.Name = "txtNameAccount";
-            this.txtNameAccount.Size = new System.Drawing.Size(188, 29);
-            this.txtNameAccount.TabIndex = 3;
+            this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.Location = new System.Drawing.Point(130, 10);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(188, 29);
+            this.txtProductName.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.txtUserName);
+            this.panel4.Controls.Add(this.txtProductID);
             this.panel4.Location = new System.Drawing.Point(2, 8);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
@@ -206,19 +235,19 @@ namespace TOPOKKI_APP
             this.label1.Location = new System.Drawing.Point(2, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.Size = new System.Drawing.Size(31, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tên tài khoản:";
+            this.label1.Text = "ID:";
             // 
-            // txtUserName
+            // txtProductID
             // 
-            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(130, 10);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(188, 29);
-            this.txtUserName.TabIndex = 3;
+            this.txtProductID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductID.Location = new System.Drawing.Point(130, 10);
+            this.txtProductID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
+            this.txtProductID.Size = new System.Drawing.Size(188, 29);
+            this.txtProductID.TabIndex = 3;
             // 
             // panel2
             // 
@@ -268,29 +297,20 @@ namespace TOPOKKI_APP
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = false;
             // 
-            // dgvAccount
-            // 
-            this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAccount.Location = new System.Drawing.Point(8, 97);
-            this.dgvAccount.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvAccount.MultiSelect = false;
-            this.dgvAccount.Name = "dgvAccount";
-            this.dgvAccount.RowHeadersWidth = 51;
-            this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAccount.Size = new System.Drawing.Size(388, 423);
-            this.dgvAccount.TabIndex = 0;
-            // 
-            // AccountForm
+            // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 530);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AccountForm";
-            this.Text = "AccountForm";
+            this.Name = "ProductForm";
+            this.Text = "ProductForm";
+            this.Load += new System.EventHandler(this.ProductForm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -301,33 +321,33 @@ namespace TOPOKKI_APP
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel3;
-        private Panel panel2;
-        private DataGridView dgvAccount;
-        private Button btnEditAccount;
-        private Button btnDeleteAccount;
-        private Button btnAddAccount;
-        private Panel panel4;
-        private Label label1;
-        private TextBox txtUserName;
-        private Panel panel7;
-        private ComboBox comboBox2;
-        private Label label4;
-        private Panel panel6;
-        private ComboBox cbRoleAccount;
-        private Label label3;
-        private Panel panel5;
-        private Label label2;
-        private TextBox txtNameAccount;
-        private Button btnPassAccount;
-        private TextBox txtPhoneAccount;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox txtProductPrice;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ComboBox cbProductCategory;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnEditAccount;
+        private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Button btnAddAccount;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridView dgvProduct;
     }
 }

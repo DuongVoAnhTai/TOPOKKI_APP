@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TOPOKKI_APP.Controllers;
 using TOPOKKI_APP.Helpers;
 
 namespace TOPOKKI_APP
@@ -53,18 +54,17 @@ namespace TOPOKKI_APP
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new ProductForm());
         }
 
         private void btnStatistic_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new StatisticalForm());
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
             openChildForm(new AccountForm());
-
         }
 
         private void AdjustUIBasedOnRole()
@@ -75,7 +75,5 @@ namespace TOPOKKI_APP
                 btnAccount.Visible = false;
             }
         }
-
-        
     }
 }

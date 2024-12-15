@@ -32,6 +32,7 @@
           <Property Name="DateCheckOut" Type="datetime" />
           <Property Name="TableID" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -189,6 +190,7 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TableFood" Relationship="TopokkiModel.FK__Order__TableID__5812160E" FromRole="Order" ToRole="TableFood" />
           <NavigationProperty Name="OrderDetails" Relationship="TopokkiModel.FK__OrderDeta__Order__5BE2A6F2" FromRole="Order" ToRole="OrderDetail" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -298,6 +300,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="TopokkiModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="TableID" ColumnName="TableID" />
                 <ScalarProperty Name="DateCheckOut" ColumnName="DateCheckOut" />

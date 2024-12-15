@@ -24,6 +24,7 @@ namespace TOPOKKI_APP.Models.Entities
         public Nullable<System.DateTime> DateCheckOut { get; set; }
         public int TableID { get; set; }
         public int Status { get; set; }
+        public Nullable<decimal> TotalPrice { get; set; }
     
         public virtual TableFood TableFood { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
