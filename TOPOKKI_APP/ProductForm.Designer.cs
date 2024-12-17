@@ -35,7 +35,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtProductPrice = new System.Windows.Forms.TextBox();
+            this.nmProductPrice = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbProductCategory = new System.Windows.Forms.ComboBox();
@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmProductPrice)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -105,13 +107,16 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(3, 16);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(232, 20);
+            this.txtSearch.Size = new System.Drawing.Size(232, 22);
             this.txtSearch.TabIndex = 0;
+            this.txtSearch.Tag = "";
             // 
             // panel3
             // 
@@ -128,7 +133,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.txtProductPrice);
+            this.panel7.Controls.Add(this.nmProductPrice);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Location = new System.Drawing.Point(2, 153);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
@@ -136,14 +141,18 @@
             this.panel7.Size = new System.Drawing.Size(331, 44);
             this.panel7.TabIndex = 8;
             // 
-            // txtProductPrice
+            // nmProductPrice
             // 
-            this.txtProductPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductPrice.Location = new System.Drawing.Point(130, 10);
-            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(188, 29);
-            this.txtProductPrice.TabIndex = 4;
+            this.nmProductPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmProductPrice.Location = new System.Drawing.Point(130, 11);
+            this.nmProductPrice.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nmProductPrice.Name = "nmProductPrice";
+            this.nmProductPrice.Size = new System.Drawing.Size(188, 25);
+            this.nmProductPrice.TabIndex = 9;
             // 
             // label4
             // 
@@ -169,12 +178,12 @@
             // 
             // cbProductCategory
             // 
-            this.cbProductCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductCategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProductCategory.FormattingEnabled = true;
             this.cbProductCategory.Location = new System.Drawing.Point(130, 11);
             this.cbProductCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbProductCategory.Name = "cbProductCategory";
-            this.cbProductCategory.Size = new System.Drawing.Size(188, 29);
+            this.cbProductCategory.Size = new System.Drawing.Size(188, 25);
             this.cbProductCategory.TabIndex = 2;
             // 
             // label3
@@ -211,11 +220,11 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.Location = new System.Drawing.Point(130, 10);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(188, 29);
+            this.txtProductName.Size = new System.Drawing.Size(188, 25);
             this.txtProductName.TabIndex = 3;
             // 
             // panel4
@@ -241,17 +250,19 @@
             // 
             // txtProductID
             // 
-            this.txtProductID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductID.Location = new System.Drawing.Point(130, 10);
             this.txtProductID.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.ReadOnly = true;
-            this.txtProductID.Size = new System.Drawing.Size(188, 29);
+            this.txtProductID.Size = new System.Drawing.Size(188, 25);
             this.txtProductID.TabIndex = 3;
+            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnDetail);
             this.panel2.Controls.Add(this.btnEditAccount);
             this.panel2.Controls.Add(this.btnDeleteAccount);
             this.panel2.Controls.Add(this.btnAddAccount);
@@ -261,29 +272,44 @@
             this.panel2.Size = new System.Drawing.Size(372, 51);
             this.panel2.TabIndex = 1;
             // 
+            // btnDetail
+            // 
+            this.btnDetail.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetail.Location = new System.Drawing.Point(286, 3);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(75, 46);
+            this.btnDetail.TabIndex = 3;
+            this.btnDetail.Text = "Xem";
+            this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
             // btnEditAccount
             // 
             this.btnEditAccount.BackColor = System.Drawing.SystemColors.Control;
             this.btnEditAccount.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccount.Location = new System.Drawing.Point(286, 3);
+            this.btnEditAccount.Location = new System.Drawing.Point(194, 3);
             this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(75, 46);
             this.btnEditAccount.TabIndex = 2;
             this.btnEditAccount.Text = "Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = false;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // btnDeleteAccount
             // 
             this.btnDeleteAccount.BackColor = System.Drawing.SystemColors.Control;
             this.btnDeleteAccount.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAccount.Location = new System.Drawing.Point(151, 3);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(104, 3);
             this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(75, 46);
             this.btnDeleteAccount.TabIndex = 1;
             this.btnDeleteAccount.Text = "Xóa";
             this.btnDeleteAccount.UseVisualStyleBackColor = false;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnAddAccount
             // 
@@ -296,9 +322,11 @@
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = false;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // ProductForm
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 530);
@@ -314,6 +342,7 @@
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmProductPrice)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -330,7 +359,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox cbProductCategory;
@@ -349,5 +377,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.NumericUpDown nmProductPrice;
+        private System.Windows.Forms.Button btnDetail;
     }
 }

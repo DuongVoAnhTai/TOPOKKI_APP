@@ -37,7 +37,6 @@ namespace TOPOKKI_APP
             this.btnTableFood = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
-            this.btnStock = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,7 +50,7 @@ namespace TOPOKKI_APP
             // 
             this.pnBody.BackColor = System.Drawing.Color.White;
             this.pnBody.Location = new System.Drawing.Point(172, 0);
-            this.pnBody.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnBody.Margin = new System.Windows.Forms.Padding(2);
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(747, 530);
             this.pnBody.TabIndex = 1;
@@ -64,7 +63,7 @@ namespace TOPOKKI_APP
             this.pnLeft.Controls.Add(this.pictureBox1);
             this.pnLeft.Controls.Add(this.btnLogout);
             this.pnLeft.Location = new System.Drawing.Point(0, 0);
-            this.pnLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(2);
             this.pnLeft.Name = "pnLeft";
             this.pnLeft.Size = new System.Drawing.Size(172, 530);
             this.pnLeft.TabIndex = 0;
@@ -75,11 +74,10 @@ namespace TOPOKKI_APP
             this.flowLayoutPanel1.Controls.Add(this.btnTableFood);
             this.flowLayoutPanel1.Controls.Add(this.btnMenu);
             this.flowLayoutPanel1.Controls.Add(this.btnStatistic);
-            this.flowLayoutPanel1.Controls.Add(this.btnStock);
             this.flowLayoutPanel1.Controls.Add(this.btnAccount);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-4, 130);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(176, 195);
             this.flowLayoutPanel1.TabIndex = 2;
@@ -88,7 +86,7 @@ namespace TOPOKKI_APP
             // 
             this.btnTableFood.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTableFood.Location = new System.Drawing.Point(2, 2);
-            this.btnTableFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTableFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnTableFood.Name = "btnTableFood";
             this.btnTableFood.Size = new System.Drawing.Size(167, 34);
             this.btnTableFood.TabIndex = 4;
@@ -100,7 +98,7 @@ namespace TOPOKKI_APP
             // 
             this.btnMenu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Location = new System.Drawing.Point(2, 40);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(167, 34);
             this.btnMenu.TabIndex = 0;
@@ -112,7 +110,7 @@ namespace TOPOKKI_APP
             // 
             this.btnStatistic.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistic.Location = new System.Drawing.Point(2, 78);
-            this.btnStatistic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatistic.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.Size = new System.Drawing.Size(167, 34);
             this.btnStatistic.TabIndex = 1;
@@ -120,22 +118,11 @@ namespace TOPOKKI_APP
             this.btnStatistic.UseVisualStyleBackColor = true;
             this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
-            // btnStock
-            // 
-            this.btnStock.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStock.Location = new System.Drawing.Point(2, 116);
-            this.btnStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(167, 34);
-            this.btnStock.TabIndex = 2;
-            this.btnStock.Text = "Kho";
-            this.btnStock.UseVisualStyleBackColor = true;
-            // 
             // btnAccount
             // 
             this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.Location = new System.Drawing.Point(2, 154);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAccount.Location = new System.Drawing.Point(2, 116);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(167, 34);
             this.btnAccount.TabIndex = 3;
@@ -156,7 +143,7 @@ namespace TOPOKKI_APP
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(56, 25);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(52, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -167,7 +154,7 @@ namespace TOPOKKI_APP
             // 
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Location = new System.Drawing.Point(2, 486);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(167, 34);
             this.btnLogout.TabIndex = 4;
@@ -182,7 +169,7 @@ namespace TOPOKKI_APP
             this.ClientSize = new System.Drawing.Size(921, 530);
             this.Controls.Add(this.pnBody);
             this.Controls.Add(this.pnLeft);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lí nhà hàng";
@@ -204,7 +191,6 @@ namespace TOPOKKI_APP
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btnMenu;
         private Button btnStatistic;
-        private Button btnStock;
         private Button btnAccount;
         private Button btnLogout;
         private Button btnTableFood;

@@ -31,18 +31,79 @@ namespace TOPOKKI_APP.Controllers
             }
         }
 
-        public void GetListProduct(DataGridView gridView)
+        public void GetListProduct(BindingSource binding)
         {
             using (var context = new TopokkiEntities())
             {
                 var product = context.Products.Select(p => new
                 {
+                    ID = p.ID,
                     Name = p.Name,
                     Price = p.Price,
                     CategoryID = p.CategoryID
                 }).ToList();
-                gridView.DataSource = product;
+                binding.DataSource = product;
             };
         }
+
+        public void InsertProduct(string name, int categoryID, decimal price)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var product = new Product
+                {
+                    CategoryID = categoryID,
+                    Name = name,
+                    Price = price,
+                };
+                context.Products.Add(product);
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateProduct(int productID, string name, int categoryID, decimal price)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var product = context.Products.FirstOrDefault(p => p.ID == productID);
+                if(product != null)
+                {
+                    product.Name = name;
+                    product.Price = price;
+                    product.CategoryID = categoryID;
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        public void DeleteProduct(int productID)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                OrderController.Instance.DeleteOrderDetailByProductID(productID);
+                var product = context.Products.FirstOrDefault(p => p.ID == productID);
+                if (product != null)
+                {
+                    context.Products.Remove(product);
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        public void SearchProductByName(string name, BindingSource binding)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var product = context.Products.Where(p => p.Name.Contains(name.ToLower()))
+                    .Select(p => new
+                    {
+                        ID = p.ID,
+                        Name = p.Name,
+                        Price = p.Price,
+                        CategoryID = p.CategoryID
+                    }).ToList();
+                binding.DataSource = product;
+            }
+        } 
     }
 }

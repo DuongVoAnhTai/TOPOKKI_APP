@@ -167,5 +167,17 @@ namespace TOPOKKI_APP.Controllers
                 return dt;
             }
         }
+        public void DeleteOrderDetailByProductID(int id)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var orderDetail = context.OrderDetails.FirstOrDefault(od => od.ProductID == id);
+                if(orderDetail != null)
+                {
+                    context.OrderDetails.Remove(orderDetail);
+                    context.SaveChanges();
+                }
+            }
+        }
     }
 }

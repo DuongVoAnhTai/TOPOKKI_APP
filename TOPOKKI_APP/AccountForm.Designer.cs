@@ -51,6 +51,7 @@ namespace TOPOKKI_APP
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -67,10 +68,10 @@ namespace TOPOKKI_APP
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.dgvAccount);
-            this.panel1.Location = new System.Drawing.Point(1, -1);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 530);
+            this.panel1.Size = new System.Drawing.Size(747, 529);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -110,11 +111,11 @@ namespace TOPOKKI_APP
             // 
             // txtPhoneAccount
             // 
-            this.txtPhoneAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneAccount.Location = new System.Drawing.Point(130, 10);
             this.txtPhoneAccount.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneAccount.Name = "txtPhoneAccount";
-            this.txtPhoneAccount.Size = new System.Drawing.Size(188, 29);
+            this.txtPhoneAccount.Size = new System.Drawing.Size(188, 25);
             this.txtPhoneAccount.TabIndex = 4;
             // 
             // label4
@@ -140,12 +141,12 @@ namespace TOPOKKI_APP
             // 
             // cbRoleAccount
             // 
-            this.cbRoleAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRoleAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRoleAccount.FormattingEnabled = true;
             this.cbRoleAccount.Location = new System.Drawing.Point(130, 11);
             this.cbRoleAccount.Margin = new System.Windows.Forms.Padding(2);
             this.cbRoleAccount.Name = "cbRoleAccount";
-            this.cbRoleAccount.Size = new System.Drawing.Size(188, 29);
+            this.cbRoleAccount.Size = new System.Drawing.Size(188, 25);
             this.cbRoleAccount.TabIndex = 2;
             // 
             // label3
@@ -182,11 +183,11 @@ namespace TOPOKKI_APP
             // 
             // txtNameAccount
             // 
-            this.txtNameAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameAccount.Location = new System.Drawing.Point(130, 10);
             this.txtNameAccount.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameAccount.Name = "txtNameAccount";
-            this.txtNameAccount.Size = new System.Drawing.Size(188, 29);
+            this.txtNameAccount.Size = new System.Drawing.Size(188, 25);
             this.txtNameAccount.TabIndex = 3;
             // 
             // panel4
@@ -212,17 +213,18 @@ namespace TOPOKKI_APP
             // 
             // txtUserName
             // 
-            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(130, 10);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(188, 29);
+            this.txtUserName.Size = new System.Drawing.Size(188, 25);
             this.txtUserName.TabIndex = 3;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnDetail);
             this.panel2.Controls.Add(this.btnEditAccount);
             this.panel2.Controls.Add(this.btnDeleteAccount);
             this.panel2.Controls.Add(this.btnAddAccount);
@@ -236,7 +238,7 @@ namespace TOPOKKI_APP
             // 
             this.btnEditAccount.BackColor = System.Drawing.SystemColors.Control;
             this.btnEditAccount.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccount.Location = new System.Drawing.Point(286, 3);
+            this.btnEditAccount.Location = new System.Drawing.Point(195, 3);
             this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(75, 46);
@@ -248,7 +250,7 @@ namespace TOPOKKI_APP
             // 
             this.btnDeleteAccount.BackColor = System.Drawing.SystemColors.Control;
             this.btnDeleteAccount.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAccount.Location = new System.Drawing.Point(151, 3);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(101, 3);
             this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(75, 46);
@@ -270,6 +272,7 @@ namespace TOPOKKI_APP
             // 
             // dgvAccount
             // 
+            this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccount.Location = new System.Drawing.Point(8, 97);
             this.dgvAccount.Margin = new System.Windows.Forms.Padding(2);
@@ -279,6 +282,19 @@ namespace TOPOKKI_APP
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(388, 423);
             this.dgvAccount.TabIndex = 0;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetail.Location = new System.Drawing.Point(286, 2);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(75, 46);
+            this.btnDetail.TabIndex = 3;
+            this.btnDetail.Text = "Xem";
+            this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // AccountForm
             // 
@@ -290,6 +306,7 @@ namespace TOPOKKI_APP
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AccountForm";
             this.Text = "AccountForm";
+            this.Load += new System.EventHandler(this.AccountForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -329,5 +346,6 @@ namespace TOPOKKI_APP
         private TextBox txtNameAccount;
         private Button btnPassAccount;
         private TextBox txtPhoneAccount;
+        private Button btnDetail;
     }
 }

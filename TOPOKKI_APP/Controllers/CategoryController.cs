@@ -26,5 +26,14 @@ namespace TOPOKKI_APP.Controllers
                 return context.Categories.ToList();
             }
         }
+
+        public Category GetCategoryByID(int id)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var categoryList = context.Categories.FirstOrDefault(c => c.ID == id);
+                return categoryList;
+            }
+        }
     }
 }
