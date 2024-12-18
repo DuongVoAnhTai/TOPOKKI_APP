@@ -47,11 +47,11 @@ namespace TOPOKKI_APP
             this.label1 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
-            this.btnDetail = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -98,6 +98,7 @@ namespace TOPOKKI_APP
             this.btnPassAccount.TabIndex = 3;
             this.btnPassAccount.Text = "Đặt lại mật khẩu";
             this.btnPassAccount.UseVisualStyleBackColor = false;
+            this.btnPassAccount.Click += new System.EventHandler(this.btnPassAccount_Click);
             // 
             // panel7
             // 
@@ -217,9 +218,9 @@ namespace TOPOKKI_APP
             this.txtUserName.Location = new System.Drawing.Point(130, 10);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.ReadOnly = true;
             this.txtUserName.Size = new System.Drawing.Size(188, 25);
             this.txtUserName.TabIndex = 3;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // panel2
             // 
@@ -234,6 +235,19 @@ namespace TOPOKKI_APP
             this.panel2.Size = new System.Drawing.Size(372, 51);
             this.panel2.TabIndex = 1;
             // 
+            // btnDetail
+            // 
+            this.btnDetail.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetail.Location = new System.Drawing.Point(286, 2);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(75, 46);
+            this.btnDetail.TabIndex = 3;
+            this.btnDetail.Text = "Xem";
+            this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
             // btnEditAccount
             // 
             this.btnEditAccount.BackColor = System.Drawing.SystemColors.Control;
@@ -245,6 +259,7 @@ namespace TOPOKKI_APP
             this.btnEditAccount.TabIndex = 2;
             this.btnEditAccount.Text = "Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = false;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // btnDeleteAccount
             // 
@@ -257,6 +272,7 @@ namespace TOPOKKI_APP
             this.btnDeleteAccount.TabIndex = 1;
             this.btnDeleteAccount.Text = "Xóa";
             this.btnDeleteAccount.UseVisualStyleBackColor = false;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnAddAccount
             // 
@@ -269,6 +285,7 @@ namespace TOPOKKI_APP
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = false;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // dgvAccount
             // 
@@ -282,19 +299,6 @@ namespace TOPOKKI_APP
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(388, 423);
             this.dgvAccount.TabIndex = 0;
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetail.Location = new System.Drawing.Point(286, 2);
-            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(75, 46);
-            this.btnDetail.TabIndex = 3;
-            this.btnDetail.Text = "Xem";
-            this.btnDetail.UseVisualStyleBackColor = false;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // AccountForm
             // 

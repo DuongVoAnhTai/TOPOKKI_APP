@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TOPOKKI_APP.Helpers;
 using TOPOKKI_APP.Models.Entities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TOPOKKI_APP.Controllers
 {
@@ -24,13 +27,45 @@ namespace TOPOKKI_APP.Controllers
         {
             using (var context = new TopokkiEntities())
             {
-                var account = context.Accounts.
-                    FirstOrDefault(a => a.UserName == username && a.Password == password);
-                if (account != null)
+                var account = context.Accounts.Include("Role")
+                    .FirstOrDefault(a => a.UserName == username && a.Password == password);
+                if (account != null && account.Role != null)
                 {
-                    return account.Role;
+                    return account.Role.Name;
                 }
                 return null;
+            }
+        }
+
+        public Account GetAccountByUserName(string userName)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var account = context.Accounts.FirstOrDefault(a => a.UserName == userName);
+                return account;
+            }
+        }
+
+        public bool UpdateAccount(string username, string displayName, string password, string newPassword)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var account = context.Accounts.FirstOrDefault(a => a.UserName == username && a.Password == password);
+                if (account != null)
+                {
+                    if (newPassword == null || newPassword == "")
+                    {
+                        account.Name = displayName;
+                    }
+                    else
+                    {
+                        account.Name = displayName;
+                        account.Password = newPassword;
+                    }
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
             }
         }
 
@@ -43,9 +78,69 @@ namespace TOPOKKI_APP.Controllers
                         UserName = a.UserName,
                         Name = a.Name,
                         Phone = a.Phone,
-                        Role = a.Role
+                        RoleID = a.RoleID
                     }).ToList();
                 binding.DataSource = account;
+            }
+        }
+
+        public void InsertAccount(string username, string displayName, string phone, int roleID)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var account = new Account
+                {
+                    UserName = username,
+                    Password = "1",
+                    Name = displayName,
+                    Phone = phone,
+                    RoleID = roleID
+                };
+                context.Accounts.Add(account);
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateAccount(string username, string displayName, string phone, int roleID)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var account = context.Accounts.FirstOrDefault(a => a.UserName == username);
+                if (account != null)
+                {
+                    account.Name = displayName;
+                    account.Phone = phone;
+                    account.RoleID = roleID;
+
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        public void DeleteAccount(string username)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var acount = context.Accounts.FirstOrDefault(a => a.UserName == username);
+                if (acount != null)
+                {
+                    context.Accounts.Remove(acount);
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        public void ResetPassword(string username)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var account = context.Accounts.FirstOrDefault(a => a.UserName == username);
+                if (account != null)
+                {
+                    account.Password = "1";
+
+                    context.SaveChanges();
+                }
             }
         }
     }

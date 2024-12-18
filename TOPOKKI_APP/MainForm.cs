@@ -9,24 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TOPOKKI_APP.Controllers;
 using TOPOKKI_APP.Helpers;
+using TOPOKKI_APP.Models.Entities;
 
 namespace TOPOKKI_APP
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private Account loginAccount;
+        public Account LoginAccount
+        {
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(); }
+        }
+
+        public MainForm(Account account)
         {
             InitializeComponent();
+            LoginAccount = account;
+        }
+
+        void ChangeAccount()
+        {
+            btnProfile.Text = loginAccount.Name;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             AdjustUIBasedOnRole();
-            openChildForm(new TableFoodForm());
+            OpenChildForm(new TableFoodForm());
         }
 
         private Form currentFormChild;
-        public void openChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentFormChild != null)
             {
@@ -49,22 +63,22 @@ namespace TOPOKKI_APP
 
         private void btnTableFood_Click(object sender, EventArgs e)
         {
-            openChildForm(new TableFoodForm());
+            OpenChildForm(new TableFoodForm());
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            openChildForm(new ProductForm());
+            OpenChildForm(new ProductForm());
         }
 
         private void btnStatistic_Click(object sender, EventArgs e)
         {
-            openChildForm(new StatisticalForm());
+            OpenChildForm(new StatisticalForm());
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            openChildForm(new AccountForm());
+            OpenChildForm(new AccountForm());
         }
 
         private void AdjustUIBasedOnRole()
@@ -74,6 +88,18 @@ namespace TOPOKKI_APP
                 btnStatistic.Visible = false;
                 btnAccount.Visible = false;
             }
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            ProfileForm profileForm = new ProfileForm(loginAccount);
+            profileForm.UpdateAccount += profileForm_UpdateAccount;
+            profileForm.Show();
+        }
+
+        private void profileForm_UpdateAccount(object sender, AccountEvent e)
+        {
+            btnProfile.Text = e.Acc.Name;
         }
     }
 }

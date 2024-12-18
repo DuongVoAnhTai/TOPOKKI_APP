@@ -45,7 +45,7 @@ namespace TOPOKKI_APP
         {
             //Từ txtName, hãy cho Binding giá trị là Text và Binding sẽ thay đổi giá trị của Name nằm trong cái dgv
             //Tức là khi ấn qua sản phẩm khác thì giá trị sẽ thay đổi ngay lập tức
-            txtProductName.DataBindings.Add(new Binding("Text", dgvProduct.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            txtProductName.DataBindings.Add(new Binding("Text", dgvProduct.DataSource, "Name", true, DataSourceUpdateMode.Never));  // ko cho du lieuj tu txb chuyen lai dgv
             txtProductID.DataBindings.Add(new Binding("Text", dgvProduct.DataSource, "ID", true, DataSourceUpdateMode.Never));
             nmProductPrice.DataBindings.Add(new Binding("Value", dgvProduct.DataSource, "Price", true, DataSourceUpdateMode.Never));
         }

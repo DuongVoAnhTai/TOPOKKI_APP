@@ -12,7 +12,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="Role" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
@@ -52,6 +52,13 @@
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="CategoryID" Type="int" />
         </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="TableFood">
           <Key>
             <PropertyRef Name="ID" />
@@ -60,7 +67,19 @@
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Status" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Order__TableID__5812160E">
+        <Association Name="FK__Account__RoleID__778AC167">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__TableID__693CA210">
           <End Role="TableFood" Type="Self.TableFood" Multiplicity="1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -72,7 +91,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Order__5BE2A6F2">
+        <Association Name="FK__OrderDeta__Order__6D0D32F4">
           <End Role="Order" Type="Self.Order" Multiplicity="1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -84,7 +103,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Produ__5CD6CB2B">
+        <Association Name="FK__OrderDeta__Produ__6E01572D">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -96,7 +115,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Categor__534D60F1">
+        <Association Name="FK__Product__Categor__6477ECF3">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -114,20 +133,25 @@
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TableFood" EntityType="Self.TableFood" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Order__TableID__5812160E" Association="Self.FK__Order__TableID__5812160E">
+          <AssociationSet Name="FK__Account__RoleID__778AC167" Association="Self.FK__Account__RoleID__778AC167">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__TableID__693CA210" Association="Self.FK__Order__TableID__693CA210">
             <End Role="TableFood" EntitySet="TableFood" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Order__5BE2A6F2" Association="Self.FK__OrderDeta__Order__5BE2A6F2">
+          <AssociationSet Name="FK__OrderDeta__Order__6D0D32F4" Association="Self.FK__OrderDeta__Order__6D0D32F4">
             <End Role="Order" EntitySet="Order" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Produ__5CD6CB2B" Association="Self.FK__OrderDeta__Produ__5CD6CB2B">
+          <AssociationSet Name="FK__OrderDeta__Produ__6E01572D" Association="Self.FK__OrderDeta__Produ__6E01572D">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Categor__534D60F1" Association="Self.FK__Product__Categor__534D60F1">
+          <AssociationSet Name="FK__Product__Categor__6477ECF3" Association="Self.FK__Product__Categor__6477ECF3">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
@@ -142,20 +166,25 @@
           <EntitySet Name="Orders" EntityType="TopokkiModel.Order" />
           <EntitySet Name="OrderDetails" EntityType="TopokkiModel.OrderDetail" />
           <EntitySet Name="Products" EntityType="TopokkiModel.Product" />
+          <EntitySet Name="Roles" EntityType="TopokkiModel.Role" />
           <EntitySet Name="TableFoods" EntityType="TopokkiModel.TableFood" />
-          <AssociationSet Name="FK__Product__Categor__534D60F1" Association="TopokkiModel.FK__Product__Categor__534D60F1">
+          <AssociationSet Name="FK__Account__RoleID__778AC167" Association="TopokkiModel.FK__Account__RoleID__778AC167">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Categor__6477ECF3" Association="TopokkiModel.FK__Product__Categor__6477ECF3">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order__TableID__5812160E" Association="TopokkiModel.FK__Order__TableID__5812160E">
+          <AssociationSet Name="FK__Order__TableID__693CA210" Association="TopokkiModel.FK__Order__TableID__693CA210">
             <End Role="TableFood" EntitySet="TableFoods" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Order__5BE2A6F2" Association="TopokkiModel.FK__OrderDeta__Order__5BE2A6F2">
+          <AssociationSet Name="FK__OrderDeta__Order__6D0D32F4" Association="TopokkiModel.FK__OrderDeta__Order__6D0D32F4">
             <End Role="Order" EntitySet="Orders" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Produ__5CD6CB2B" Association="TopokkiModel.FK__OrderDeta__Produ__5CD6CB2B">
+          <AssociationSet Name="FK__OrderDeta__Produ__6E01572D" Association="TopokkiModel.FK__OrderDeta__Produ__6E01572D">
             <End Role="Product" EntitySet="Products" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
@@ -167,9 +196,10 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Role" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Role" Relationship="TopokkiModel.FK__Account__RoleID__778AC167" FromRole="Account" ToRole="Role" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -177,7 +207,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Products" Relationship="TopokkiModel.FK__Product__Categor__534D60F1" FromRole="Category" ToRole="Product" />
+          <NavigationProperty Name="Products" Relationship="TopokkiModel.FK__Product__Categor__6477ECF3" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -188,9 +218,9 @@
           <Property Name="DateCheckOut" Type="DateTime" Precision="3" />
           <Property Name="TableID" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TableFood" Relationship="TopokkiModel.FK__Order__TableID__5812160E" FromRole="Order" ToRole="TableFood" />
-          <NavigationProperty Name="OrderDetails" Relationship="TopokkiModel.FK__OrderDeta__Order__5BE2A6F2" FromRole="Order" ToRole="OrderDetail" />
           <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="TableFood" Relationship="TopokkiModel.FK__Order__TableID__693CA210" FromRole="Order" ToRole="TableFood" />
+          <NavigationProperty Name="OrderDetails" Relationship="TopokkiModel.FK__OrderDeta__Order__6D0D32F4" FromRole="Order" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -200,8 +230,8 @@
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="TopokkiModel.FK__OrderDeta__Order__5BE2A6F2" FromRole="OrderDetail" ToRole="Order" />
-          <NavigationProperty Name="Product" Relationship="TopokkiModel.FK__OrderDeta__Produ__5CD6CB2B" FromRole="OrderDetail" ToRole="Product" />
+          <NavigationProperty Name="Order" Relationship="TopokkiModel.FK__OrderDeta__Order__6D0D32F4" FromRole="OrderDetail" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="TopokkiModel.FK__OrderDeta__Produ__6E01572D" FromRole="OrderDetail" ToRole="Product" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -211,8 +241,16 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="CategoryID" Type="Int32" />
-          <NavigationProperty Name="Category" Relationship="TopokkiModel.FK__Product__Categor__534D60F1" FromRole="Product" ToRole="Category" />
-          <NavigationProperty Name="OrderDetails" Relationship="TopokkiModel.FK__OrderDeta__Produ__5CD6CB2B" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="Category" Relationship="TopokkiModel.FK__Product__Categor__6477ECF3" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="OrderDetails" Relationship="TopokkiModel.FK__OrderDeta__Produ__6E01572D" FromRole="Product" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="TopokkiModel.FK__Account__RoleID__778AC167" FromRole="Role" ToRole="Account" />
         </EntityType>
         <EntityType Name="TableFood">
           <Key>
@@ -221,9 +259,21 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Orders" Relationship="TopokkiModel.FK__Order__TableID__5812160E" FromRole="TableFood" ToRole="Order" />
+          <NavigationProperty Name="Orders" Relationship="TopokkiModel.FK__Order__TableID__693CA210" FromRole="TableFood" ToRole="Order" />
         </EntityType>
-        <Association Name="FK__Product__Categor__534D60F1">
+        <Association Name="FK__Account__RoleID__778AC167">
+          <End Type="TopokkiModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="TopokkiModel.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Categor__6477ECF3">
           <End Type="TopokkiModel.Category" Role="Category" Multiplicity="0..1" />
           <End Type="TopokkiModel.Product" Role="Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -235,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order__TableID__5812160E">
+        <Association Name="FK__Order__TableID__693CA210">
           <End Type="TopokkiModel.TableFood" Role="TableFood" Multiplicity="1" />
           <End Type="TopokkiModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -247,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Order__5BE2A6F2">
+        <Association Name="FK__OrderDeta__Order__6D0D32F4">
           <End Type="TopokkiModel.Order" Role="Order" Multiplicity="1" />
           <End Type="TopokkiModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -259,7 +309,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Produ__5CD6CB2B">
+        <Association Name="FK__OrderDeta__Produ__6E01572D">
           <End Type="TopokkiModel.Product" Role="Product" Multiplicity="1" />
           <End Type="TopokkiModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -282,7 +332,7 @@
               <MappingFragment StoreEntitySet="Account">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -324,6 +374,14 @@
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TopokkiModel.Role">
+              <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

@@ -30,6 +30,7 @@ namespace TOPOKKI_APP.Models.Entities
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<TableFood> TableFoods { get; set; }
     }
 }

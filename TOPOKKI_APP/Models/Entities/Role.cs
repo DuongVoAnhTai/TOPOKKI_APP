@@ -12,15 +12,16 @@ namespace TOPOKKI_APP.Models.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Account
+    public partial class Role
     {
+        public Role()
+        {
+            this.Accounts = new HashSet<Account>();
+        }
+    
         public int ID { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public int RoleID { get; set; }
-        public string Phone { get; set; }
         public string Name { get; set; }
     
-        public virtual Role Role { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
     }
 }

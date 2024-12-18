@@ -27,8 +27,9 @@ namespace TOPOKKI_APP
             string role = AccountController.Instance.CheckLogin(username, password);
             if (role != null)
             {
+                Account loginAccount = AccountController.Instance.GetAccountByUserName(username);
                 User.SetUser(username, role);
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(loginAccount);
                 this.Hide();
                 this.Show();
                 mainForm.Show();

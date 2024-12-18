@@ -41,6 +41,7 @@ namespace TOPOKKI_APP
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.pnLeft.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,6 +59,7 @@ namespace TOPOKKI_APP
             // pnLeft
             // 
             this.pnLeft.BackColor = System.Drawing.Color.White;
+            this.pnLeft.Controls.Add(this.btnProfile);
             this.pnLeft.Controls.Add(this.flowLayoutPanel1);
             this.pnLeft.Controls.Add(this.label1);
             this.pnLeft.Controls.Add(this.pictureBox1);
@@ -76,10 +78,10 @@ namespace TOPOKKI_APP
             this.flowLayoutPanel1.Controls.Add(this.btnStatistic);
             this.flowLayoutPanel1.Controls.Add(this.btnAccount);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-4, 130);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-4, 167);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(176, 195);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(176, 158);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnTableFood
@@ -136,7 +138,7 @@ namespace TOPOKKI_APP
             this.label1.Location = new System.Drawing.Point(31, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 29);
+            this.label1.Size = new System.Drawing.Size(109, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Topokki";
             // 
@@ -161,6 +163,17 @@ namespace TOPOKKI_APP
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.Location = new System.Drawing.Point(24, 111);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(128, 30);
+            this.btnProfile.TabIndex = 5;
+            this.btnProfile.Text = "Thông tin tài khoản";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // MainForm
             // 
@@ -194,5 +207,6 @@ namespace TOPOKKI_APP
         private Button btnAccount;
         private Button btnLogout;
         private Button btnTableFood;
+        private Button btnProfile;
     }
 }
