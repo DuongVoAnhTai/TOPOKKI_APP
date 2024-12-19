@@ -138,7 +138,7 @@ namespace TOPOKKI_APP.Controllers
             }
         }
 
-        public DataTable GetOrderListByDate(DateTime checkIn, DateTime checkOut)
+        public DataTable GetOrderListByDate(DateTime checkIn, DateTime checkOut, int currentPage, int pageSize)
         {
             using ( var context = new TopokkiEntities())
             {
@@ -151,6 +151,11 @@ namespace TOPOKKI_APP.Controllers
                         DateCheckIn = o.DateCheckIn,
                         DateCheckOut = o.DateCheckOut
                     }).ToList();
+
+                int totalRecords = orderList.Count();
+
+                var pageData = orderList.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
                 // Tạo DataTable và định nghĩa cột
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Tên bàn", typeof(string));
@@ -159,7 +164,7 @@ namespace TOPOKKI_APP.Controllers
                 dt.Columns.Add("Ngày ra", typeof(DateTime));
 
                 // Thêm dữ liệu vào DataTable
-                foreach (var order in orderList)
+                foreach (var order in pageData)
                 {
                     dt.Rows.Add(order.Name, order.TotalPrice, order.DateCheckIn, order.DateCheckOut);
                 }
@@ -167,6 +172,16 @@ namespace TOPOKKI_APP.Controllers
                 return dt;
             }
         }
+
+        public int CaculateTotalPages (DateTime checkIn, DateTime checkOut, int pageSize)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                int totalRecords = context.Orders.Count(o => o.DateCheckIn >= checkIn && o.DateCheckOut <= checkOut && o.Status == 1);
+                return (int)Math.Ceiling((double)totalRecords / pageSize);
+            }
+        }
+
         public void DeleteOrderDetailByProductID(int id)
         {
             using (var context = new TopokkiEntities())
@@ -177,6 +192,35 @@ namespace TOPOKKI_APP.Controllers
                     context.OrderDetails.Remove(orderDetail);
                     context.SaveChanges();
                 }
+            }
+        }
+
+        public DataTable GetOrdersByMonth(int month, int year)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var orders = context.Orders
+                    .Where(o => o.DateCheckIn.Month == month && o.DateCheckIn.Year == year && o.Status == 1)
+                    .Select(o => new
+                    {
+                        TableName = o.TableFood.Name,
+                        TotalPrice = o.TotalPrice,
+                        DateCheckIn = o.DateCheckIn,
+                        DateCheckOut = o.DateCheckOut
+                    }).ToList();
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Tên bàn", typeof(string));
+                dt.Columns.Add("Tổng tiền", typeof(decimal));
+                dt.Columns.Add("Ngày vào", typeof(DateTime));
+                dt.Columns.Add("Ngày ra", typeof(DateTime));
+
+                foreach (var order in orders)
+                {
+                    dt.Rows.Add(order.TableName, order.TotalPrice, order.DateCheckIn, order.DateCheckOut);
+                }
+
+                return dt;
             }
         }
     }
