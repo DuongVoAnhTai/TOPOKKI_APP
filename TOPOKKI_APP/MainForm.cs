@@ -101,5 +101,65 @@ namespace TOPOKKI_APP
         {
             btnProfile.Text = e.Acc.Name;
         }
+
+        private void btnTableFood_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.Gray;
+        }
+
+        private void btnTableFood_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void btnMenu_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.Gray;
+        }
+
+        private void btnMenu_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void btnStatistic_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.Gray;
+        }
+
+        private void btnStatistic_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void btnAccount_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.Gray;
+        }
+
+        private void btnAccount_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void btnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.Gray;
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(64, 64, 64);
+        }
     }
 }

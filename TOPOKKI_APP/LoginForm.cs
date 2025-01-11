@@ -29,6 +29,7 @@ namespace TOPOKKI_APP
             {
                 Account loginAccount = AccountController.Instance.GetAccountByUserName(username);
                 User.SetUser(username, role);
+                User.Name = loginAccount.Name;
                 MainForm mainForm = new MainForm(loginAccount);
                 this.Hide();
                 this.Show();

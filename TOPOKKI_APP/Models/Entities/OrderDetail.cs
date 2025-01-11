@@ -18,6 +18,7 @@ namespace TOPOKKI_APP.Models.Entities
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public int Quantity { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }

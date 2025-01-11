@@ -10,15 +10,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TOPOKKI_APP.Controllers;
+using TOPOKKI_APP.Helpers;
 using TOPOKKI_APP.Models.Entities;
 
 namespace TOPOKKI_APP
 {
     public partial class TableFoodForm : Form
     {
+        private readonly ExportFile export;
         public TableFoodForm()
         {
             InitializeComponent();
+            export = new ExportFile();
         }
 
         private void TableFoodForm_Load(object sender, EventArgs e)
@@ -102,12 +105,16 @@ namespace TOPOKKI_APP
             CultureInfo culture = new CultureInfo("vi-VN");
             Thread.CurrentThread.CurrentCulture = culture;
             txtTotalPrice.Text = totalPrice.ToString("c");
+            nmFoodCount.Value = 1;
+
         }
 
         void btn_Click(object sender, EventArgs e)
         {
-            int tableID = ((sender as Button).Tag as TableFood).ID;
-            lsvOrder.Tag = (sender as Button).Tag;
+            TableFood selectedTable = (sender as Button).Tag as TableFood;
+            int tableID = selectedTable.ID;
+            lsvOrder.Tag = selectedTable;
+            lblTable.Text = $"{selectedTable.Name}";
             ShowOrder(tableID);
         }
 
@@ -151,6 +158,7 @@ namespace TOPOKKI_APP
             TableFood table = lsvOrder.Tag as TableFood;
 
             int orderID = OrderController.Instance.GetUncheckOrderByTableID(table.ID);
+            Order order = OrderController.Instance.GetUncheckOrderByTable(table.ID);
             double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]);
             DialogResult result = MessageBox.Show("Bạn có chắc thanh toán hóa đơn cho bàn " + table.Name, "Thông báo", MessageBoxButtons.OKCancel);
 
@@ -159,9 +167,14 @@ namespace TOPOKKI_APP
                 if(result == DialogResult.OK)
                 {
                     OrderController.Instance.CheckOut(orderID, (decimal)totalPrice);
+                    export.ExportBill(order);
                     ShowOrder(table.ID);
                     LoadTables();
                 } 
+            }
+            else
+            {
+                MessageBox.Show("Bàn hiện tại không có hóa đơn nào");
             }
         }
 
@@ -175,6 +188,28 @@ namespace TOPOKKI_APP
             {
                 TableFoodController.Instance.SwitchTable(id1, id2);
                 LoadTables();
+            }
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Text == "Xóa")
+            {
+                if (lsvOrder.SelectedItems.Count > 0)
+                {
+                    var selectedItem = lsvOrder.SelectedItems[0];
+                    string itemName = selectedItem.Text;
+                    TableFood table = lsvOrder.Tag as TableFood;
+
+                    // Gọi phương thức xóa món trong database
+                    int orderId = OrderController.Instance.GetCurrentOrderId(table.ID); // Hàm lấy Order ID hiện tại
+                    int ticketId = ProductController.Instance.GetProductIdByName(itemName); // Hàm lấy Ticket ID từ tên món
+                    OrderController.Instance.DeleteOrderDetail(orderId, ticketId);
+
+                    // Cập nhật lại ListView
+                    ShowOrder(table.ID); // Hàm lấy Table ID hiện tại
+                    LoadTables();
+                }
             }
         }
     }

@@ -6,12 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d31b0041229e4d20a16b640afe7c66cb" Name="Diagram1">
         <EntityTypeShape EntityType="TopokkiModel.Account" Width="1.5" PointX="8" PointY="5" />
-        <EntityTypeShape EntityType="TopokkiModel.Category" Width="1.5" PointX="0.75" PointY="1.25" />
-        <EntityTypeShape EntityType="TopokkiModel.Order" Width="1.5" PointX="3" PointY="5.375" />
-        <EntityTypeShape EntityType="TopokkiModel.OrderDetail" Width="1.5" PointX="5.25" PointY="0.875" />
-        <EntityTypeShape EntityType="TopokkiModel.Product" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="TopokkiModel.Category" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="TopokkiModel.Order" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="TopokkiModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="TopokkiModel.Product" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="TopokkiModel.Role" Width="1.5" PointX="5.75" PointY="5.375" />
-        <EntityTypeShape EntityType="TopokkiModel.TableFood" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="TopokkiModel.TableFood" Width="1.5" PointX="0.75" PointY="5.25" />
         <AssociationConnector Association="TopokkiModel.FK__Account__RoleID__778AC167" />
         <AssociationConnector Association="TopokkiModel.FK__Product__Categor__6477ECF3" />
         <AssociationConnector Association="TopokkiModel.FK__Order__TableID__693CA210" />

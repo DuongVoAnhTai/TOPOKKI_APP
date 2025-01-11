@@ -48,6 +48,9 @@
     <Reference Include="EPPlus.System.Drawing, Version=7.5.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.System.Drawing.7.5.0\lib\net462\EPPlus.System.Drawing.dll</HintPath>
     </Reference>
+    <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\HarfBuzzSharp.2.6.1.5\lib\net462\HarfBuzzSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
@@ -55,6 +58,9 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="Spire.Doc, Version=12.12.12.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.12.12.12\lib\net48\Spire.Doc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -105,6 +111,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\TableFoodController.cs" />
+    <Compile Include="Helpers\ExportFile.cs" />
     <Compile Include="Helpers\User.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -204,6 +211,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="StatisticalForm.resx">
       <DependentUpon>StatisticalForm.cs</DependentUpon>
@@ -215,6 +223,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Topokki.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Assets\Template\Bill.docx" />
     <None Include="Models\Entities\Topokki.edmx.diagram">
       <DependentUpon>Topokki.edmx</DependentUpon>
     </None>
@@ -233,6 +242,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\dookki-removebg-preview.png" />
+    <Content Include="Assets\Images\icons8-password-50.png" />
+    <Content Include="Assets\Images\icons8-user-60.png" />
+    <Content Include="Assets\Images\logout_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Models\Entities\Topokki.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Topokki.Context.cs</LastGenOutput>
@@ -256,5 +269,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+    <Error Condition="!Exists('..\packages\HarfBuzzSharp.2.6.1.5\build\net462\HarfBuzzSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\HarfBuzzSharp.2.6.1.5\build\net462\HarfBuzzSharp.targets'))" />
   </Target>
+  <Import Project="..\packages\HarfBuzzSharp.2.6.1.5\build\net462\HarfBuzzSharp.targets" Condition="Exists('..\packages\HarfBuzzSharp.2.6.1.5\build\net462\HarfBuzzSharp.targets')" />
 </Project>

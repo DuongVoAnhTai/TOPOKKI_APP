@@ -42,6 +42,7 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -230,6 +231,7 @@
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" />
           <NavigationProperty Name="Order" Relationship="TopokkiModel.FK__OrderDeta__Order__6D0D32F4" FromRole="OrderDetail" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="TopokkiModel.FK__OrderDeta__Produ__6E01572D" FromRole="OrderDetail" ToRole="Product" />
         </EntityType>
@@ -321,7 +323,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -362,6 +364,7 @@
           <EntitySetMapping Name="OrderDetails">
             <EntityTypeMapping TypeName="TopokkiModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />

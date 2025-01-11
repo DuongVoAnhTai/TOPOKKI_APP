@@ -77,15 +77,51 @@ namespace TOPOKKI_APP
             }
         }
 
+        private bool CheckValidate()
+        {
+            errorProvider1.Clear();
+            bool isValid = true;
+            if (string.IsNullOrWhiteSpace(txtProductName.Text))
+            {
+                isValid = false;
+                errorProvider1.SetError(txtProductName, "Tên không được để trống!!!");
+            }
+            if (string.IsNullOrWhiteSpace(nmProductPrice.Text))
+            {
+                isValid = false;
+                errorProvider1.SetError(nmProductPrice, "Số lượng không được để trống!!!");
+            }
+            else
+            {
+                if (!int.TryParse(nmProductPrice.Text, out int value))
+                {
+                    isValid = false;
+                    errorProvider1.SetError(nmProductPrice, "Không đúng định dạng");
+                }
+                else
+                {
+                    if (value <= 0)
+                    {
+                        isValid = false;
+                        errorProvider1.SetError(nmProductPrice, "Số không được bé hơn 0");
+                    }
+                }
+            }
+            return isValid;
+        }
+
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
-            string name = txtProductName.Text;
-            int categoryID = (cbProductCategory.SelectedItem as Category).ID;
-            decimal price = nmProductPrice.Value;
+            if (CheckValidate())
+            {
+                string name = txtProductName.Text;
+                int categoryID = (cbProductCategory.SelectedItem as Category).ID;
+                decimal price = nmProductPrice.Value;
 
-            ProductController.Instance.InsertProduct(name, categoryID, price);
-            MessageBox.Show("Thêm món thành công");
-            LoadListProduct();
+                ProductController.Instance.InsertProduct(name, categoryID, price);
+                MessageBox.Show("Thêm món thành công");
+                LoadListProduct();
+            }
         }
 
         private void btnEditAccount_Click(object sender, EventArgs e)

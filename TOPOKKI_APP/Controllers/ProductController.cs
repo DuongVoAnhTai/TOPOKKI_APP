@@ -104,6 +104,15 @@ namespace TOPOKKI_APP.Controllers
                     }).ToList();
                 binding.DataSource = product;
             }
-        } 
+        }
+
+        public int GetProductIdByName(string itemName)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                var ticket = context.Products.FirstOrDefault(t => t.Name == itemName);
+                return ticket?.ID ?? 0;
+            }
+        }
     }
 }

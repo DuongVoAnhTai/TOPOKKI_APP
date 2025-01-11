@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using TOPOKKI_APP.Controllers;
 using TOPOKKI_APP.Models.Entities;
 
@@ -15,6 +16,8 @@ namespace TOPOKKI_APP
     public partial class AccountForm : Form
     {
         BindingSource accountList = new BindingSource();
+        string currentName = "", currentPhone = "";
+
         public AccountForm()
         {
             InitializeComponent();
@@ -26,6 +29,8 @@ namespace TOPOKKI_APP
             LoadAccount();
             AddAccountBinding();
             LoadRole();
+            currentName = txtUserName.Text;
+            currentPhone = txtPhoneAccount.Text;
         }
 
         void LoadAccount()
@@ -108,7 +113,10 @@ namespace TOPOKKI_APP
             string phone = txtPhoneAccount.Text;
             int roleID = (cbRoleAccount.SelectedItem as Role).ID;
 
-            AddAccount(username, displayName, phone, roleID );
+            if (IsValid())
+            {
+                AddAccount(username, displayName, phone, roleID);
+            }
         }
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
@@ -125,7 +133,12 @@ namespace TOPOKKI_APP
             string phone = txtPhoneAccount.Text;
             int roleID = (cbRoleAccount.SelectedItem as Role).ID;
 
-            EditAccount(username, displayName, phone, roleID );
+            if(IsValid(currentName, currentPhone))
+            {
+                EditAccount(username, displayName, phone, roleID);
+                currentName = username; // Cập nhật giá trị hiện tại
+                currentPhone = phone;
+            }
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
@@ -138,6 +151,83 @@ namespace TOPOKKI_APP
             string username = txtUserName.Text;
 
             ResetPassword(username);
+        }
+
+        private void dgvAccount_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvAccount.SelectedCells.Count > 0)
+            {
+                currentName = txtUserName.Text;
+                currentPhone = txtPhoneAccount.Text;
+            }
+        }
+
+        private bool IsValid(string currentName = "", string currentPhone = "")
+        {
+            bool isValid = true;
+            errorProvider1.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtUserName.Text))
+            {
+                isValid = false;
+                errorProvider1.SetError(txtUserName, "Tên đăng nhập không được để trống.");
+            }
+            else if (txtUserName.Text.Contains(' '))
+            {
+                isValid = false;
+                errorProvider1.SetError(txtUserName, "Tên đăng nhập không được có khoảng trống.");
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(txtUserName.Text, "^[a-zA-Z0-9]+$"))
+            {
+                isValid = false;
+                errorProvider1.SetError(txtUserName, "Tên đăng nhập chỉ được chứa các ký tự từ a-z và A-Z và số 0-9, không có dấu.");
+            }
+            else
+            {
+                // check duplicate username
+                string userNameTest = "";
+
+                userNameTest = txtUserName.Text;
+
+                bool test = AccountController.Instance.CheckAccount(userNameTest, currentName);
+                if (test)
+                {
+                    isValid = false;
+                    errorProvider1.SetError(txtUserName, "Tên đăng nhập đã tồn tại.");
+                }
+
+            }
+
+
+            if (string.IsNullOrWhiteSpace(txtNameAccount.Text))
+            {
+                isValid = false;
+                errorProvider1.SetError(txtNameAccount, "Tên không được để trống.");
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPhoneAccount.Text))
+            {
+                errorProvider1.SetError(txtPhoneAccount, "Vui lòng nhập số điện thoại.");
+                isValid = false;
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(txtPhoneAccount.Text, @"^\d{10}$"))
+            {
+                errorProvider1.SetError(txtPhoneAccount, "Số điện thoại phải là 10 chữ số.");
+                isValid = false;
+            }
+            else
+            {
+
+                string phoneTest = "";
+                phoneTest = txtPhoneAccount.Text;
+                bool test = AccountController.Instance.CheckPhone(phoneTest, currentPhone);
+                if (test)
+                {
+                    isValid = false;
+                    errorProvider1.SetError(txtPhoneAccount, "Số điện thoại đã tồn tại.");
+                }
+            }
+            return isValid;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -141,6 +142,22 @@ namespace TOPOKKI_APP.Controllers
 
                     context.SaveChanges();
                 }
+            }
+        }
+
+        public bool CheckAccount(string userName, string currentName)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                return context.Accounts.Any(a => a.UserName == userName && userName != currentName);
+            }
+        }
+
+        public bool CheckPhone(string phone, string currentPhone)
+        {
+            using (var context = new TopokkiEntities())
+            {
+                return context.Accounts.Any(a => a.Phone == phone && a.Phone != currentPhone);
             }
         }
     }

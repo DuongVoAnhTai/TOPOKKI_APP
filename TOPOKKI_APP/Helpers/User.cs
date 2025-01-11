@@ -14,6 +14,7 @@ namespace TOPOKKI_APP.Helpers
     {
         private static Roles role;
         private static string username;
+        public static string Name { get; set; }
 
         public static Roles Role { get => role; private set => role = value; }
         public static string UserName { get => username; private set => username = value; }
