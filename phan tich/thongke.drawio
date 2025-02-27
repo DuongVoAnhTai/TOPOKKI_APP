@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.3">
+  <diagram id="azvW5xVHaXPcPl9KW1UL" name="Page-1">
+    <mxGraphModel dx="425" dy="709" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="bQRo1ESoBVW6gnvFtZoh-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.768;entryY=0.945;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="bQRo1ESoBVW6gnvFtZoh-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="360" as="targetPoint" />
+            <mxPoint x="440" y="330" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-1" value="Thống kê hóa đơn" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="210" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="bQRo1ESoBVW6gnvFtZoh-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" target="bQRo1ESoBVW6gnvFtZoh-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="330" as="targetPoint" />
+            <mxPoint x="440" y="330" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-2" value="Thống kê doanh thu" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="540" y="210" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="bQRo1ESoBVW6gnvFtZoh-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="130" as="targetPoint" />
+            <mxPoint x="440" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-11" value="Dữ liệu thống kê" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="bQRo1ESoBVW6gnvFtZoh-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.4936" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-3" value="Quản lí" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="bQRo1ESoBVW6gnvFtZoh-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-16" value="Hóa đơn của khách hàng" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="bQRo1ESoBVW6gnvFtZoh-13" vertex="1" connectable="0">
+          <mxGeometry x="-0.0892" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQRo1ESoBVW6gnvFtZoh-4" value="Hóa đơn" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="380" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

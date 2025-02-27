@@ -1,0 +1,77 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.3">
+  <diagram name="Page-1" id="qf9FJet_Dc6O43huM2xx">
+    <mxGraphModel dx="1556" dy="1013" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UNDU5_QhkWIaGJZdgGcv-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.92;entryY=0.305;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="STHSpoavQeFZvqoTMlJ5-1" target="STHSpoavQeFZvqoTMlJ5-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UNDU5_QhkWIaGJZdgGcv-3" value="Thông tin món ăn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UNDU5_QhkWIaGJZdgGcv-2">
+          <mxGeometry x="-0.0902" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-1" value="Thêm món cho bàn" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-2" value="Chuyển bàn" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="110" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="STHSpoavQeFZvqoTMlJ5-3" target="STHSpoavQeFZvqoTMlJ5-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-17" value="Hóa đơn đã tính" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="STHSpoavQeFZvqoTMlJ5-16" vertex="1" connectable="0">
+          <mxGeometry x="0.0532" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-3" value="Thanh toán" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="STHSpoavQeFZvqoTMlJ5-4" target="UNDU5_QhkWIaGJZdgGcv-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-4" value="Thực đơn" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-50" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="STHSpoavQeFZvqoTMlJ5-5" target="STHSpoavQeFZvqoTMlJ5-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UNDU5_QhkWIaGJZdgGcv-1" value="Thông tin thực đơn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="STHSpoavQeFZvqoTMlJ5-6">
+          <mxGeometry x="-0.0217" y="3" relative="1" as="geometry">
+            <mxPoint x="-363" y="-87" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UNDU5_QhkWIaGJZdgGcv-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="STHSpoavQeFZvqoTMlJ5-5" target="STHSpoavQeFZvqoTMlJ5-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-5" value="Quản lí" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.574;entryY=1.053;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="STHSpoavQeFZvqoTMlJ5-3" target="STHSpoavQeFZvqoTMlJ5-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-13" value="Thông tin hóa đơn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="STHSpoavQeFZvqoTMlJ5-9" vertex="1" connectable="0">
+          <mxGeometry x="0.0332" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STHSpoavQeFZvqoTMlJ5-15" value="Hóa đơn" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="190" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UNDU5_QhkWIaGJZdgGcv-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UNDU5_QhkWIaGJZdgGcv-6" target="STHSpoavQeFZvqoTMlJ5-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UNDU5_QhkWIaGJZdgGcv-8" value="Thông tin món ăn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UNDU5_QhkWIaGJZdgGcv-7">
+          <mxGeometry x="-0.0692" y="-4" relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UNDU5_QhkWIaGJZdgGcv-6" value="Khách hàng" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
